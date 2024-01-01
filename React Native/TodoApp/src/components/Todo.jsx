@@ -2,11 +2,11 @@ import { Text, View, StyleSheet, TouchableOpacity } from "react-native";
 import { COLORS } from "../utils/colors";
 import { Feather } from "@expo/vector-icons";
 
-export default Todo = ({ title }) => {
+export default Todo = ({ title, onDelete }) => {
   return (
     <View style={styles.main}>
       <Text style={styles.text}>{title}</Text>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => onDelete(title)}>
         <Feather
           name="trash-2"
           size={22}
@@ -28,6 +28,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     marginBottom: 10,
+    alignSelf: "center",
   },
   text: {
     fontSize: 22,
