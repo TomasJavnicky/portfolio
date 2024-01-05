@@ -1,6 +1,106 @@
 import * as React from "react";
-import Svg, { Path, G } from "react-native-svg";
+import Svg, { Path, G, Circle } from "react-native-svg";
 import { COLORS } from "../utils/colors";
+import { Feather } from "@expo/vector-icons";
+import { FontAwesome5 } from "@expo/vector-icons";
+import { SimpleLineIcons } from "@expo/vector-icons";
+
+//haven't used this one cos I couldn't find original svg icon from FB
+// export const FriendsIcon = (props) => (
+//   <Svg
+//     xmlns="http://www.w3.org/2000/svg"
+//     width={30}
+//     height={21}
+//     viewBox="0 0 40 32"
+//     {...props}
+//   >
+//     <Path
+//       d="M 7.073 3.635 C 4.443 6.978, 4.443 10.022, 7.073 13.365 C 11.340 18.790, 21 15.415, 21 8.500 C 21 1.585, 11.340 -1.790, 7.073 3.635 M 10.571 5.571 C 7.342 8.801, 10.279 13.981, 14.436 12.386 C 16.974 11.412, 17.624 6.929, 15.456 5.344 C 13.105 3.625, 12.489 3.654, 10.571 5.571 M 24.571 8.571 C 22.550 10.592, 22.550 15.408, 24.571 17.429 C 26.592 19.450, 31.408 19.450, 33.429 17.429 C 37.176 13.681, 34.339 7, 29 7 C 27.429 7, 25.436 7.707, 24.571 8.571 M 26.958 11.550 C 25.896 12.831, 25.961 13.390, 27.336 14.764 L 29 16.429 30.664 14.764 C 32.039 13.390, 32.104 12.831, 31.042 11.550 C 29.423 9.600, 28.577 9.600, 26.958 11.550 M 3 20 C 0.761 22.239, 0.299 27.899, 2.200 29.800 C 3.834 31.434, 22.166 31.434, 23.800 29.800 C 29.248 24.352, 23.434 18, 13 18 C 6.333 18, 4.667 18.333, 3 20 M 5.933 23.067 C 2.607 26.393, 4.910 28, 13 28 C 21.090 28, 23.393 26.393, 20.067 23.067 C 17.160 20.160, 8.840 20.160, 5.933 23.067 M 27 22.500 C 27 23.537, 28.042 24, 30.378 24 C 33.663 24, 36.649 26.017, 35.325 27.342 C 34.963 27.704, 32.942 28, 30.833 28 C 28.093 28, 27 28.428, 27 29.500 C 27 31.064, 34.086 31.672, 37.418 30.393 C 39.218 29.702, 39.503 25.809, 37.965 22.934 C 36.622 20.425, 27 20.044, 27 22.500"
+//       fill={COLORS.feedUserIcons}
+//       fillRule="evenodd"
+//     />
+//   </Svg>
+// );
+//instead used this one:
+export const FriendsIcon = () => {
+  return <Feather name="users" size={24} color={COLORS.feedUserIcons} />;
+};
+
+//this one's also different from original FB icon
+export const ProfileIcon = () => {
+  return (
+    <FontAwesome5 name="user-circle" size={24} color={COLORS.feedUserIcons} />
+  );
+};
+
+//this one's also different from original FB icon
+export const NotificationsIcon = () => {
+  return <SimpleLineIcons name="bell" size={24} color={COLORS.feedUserIcons} />;
+};
+
+export const PublicPost = (props) => (
+  <Svg
+    viewBox="0 0 16 16"
+    width={12}
+    height={12}
+    fill={COLORS.feedUserIcons}
+    title="Zdie\u013Ean\xE9 s Verejn\xE9"
+    className="x19dipnz x1lliihq x1k90msu x2h7rmj x1qfuztq"
+    style={{
+      "--color": "var(--secondary-icon)",
+    }}
+    {...props}
+  >
+    <G fillRule="evenodd" transform="translate(-448 -544)">
+      <G>
+        <Path
+          d="M109.5 408.5c0 3.23-2.04 5.983-4.903 7.036l.07-.036c1.167-1 1.814-2.967 2-3.834.214-1 .303-1.3-.5-1.96-.31-.253-.677-.196-1.04-.476-.246-.19-.356-.59-.606-.73-.594-.337-1.107.11-1.954.223a2.666 2.666 0 0 1-1.15-.123c-.007 0-.007 0-.013-.004l-.083-.03c-.164-.082-.077-.206.006-.36h-.006c.086-.17.086-.376-.05-.529-.19-.214-.54-.214-.804-.224-.106-.003-.21 0-.313.004l-.003-.004c-.04 0-.084.004-.124.004h-.037c-.323.007-.666-.034-.893-.314-.263-.353-.29-.733.097-1.09.28-.26.863-.8 1.807-.22.603.37 1.166.667 1.666.5.33-.11.48-.303.094-.87a1.128 1.128 0 0 1-.214-.73c.067-.776.687-.84 1.164-1.2.466-.356.68-.943.546-1.457-.106-.413-.51-.873-1.28-1.01a7.49 7.49 0 0 1 6.524 7.434"
+          transform="translate(354 143.5)"
+        />
+        <Path
+          d="M104.107 415.696A7.498 7.498 0 0 1 94.5 408.5a7.48 7.48 0 0 1 3.407-6.283 5.474 5.474 0 0 0-1.653 2.334c-.753 2.217-.217 4.075 2.29 4.075.833 0 1.4.561 1.333 2.375-.013.403.52 1.78 2.45 1.89.7.04 1.184 1.053 1.33 1.74.06.29.127.65.257.97a.174.174 0 0 0 .193.096"
+          transform="translate(354 143.5)"
+        />
+        <Path
+          fillRule="nonzero"
+          d="M110 408.5a8 8 0 1 1-16 0 8 8 0 0 1 16 0zm-1 0a7 7 0 1 0-14 0 7 7 0 0 0 14 0z"
+          transform="translate(354 143.5)"
+        />
+      </G>
+    </G>
+  </Svg>
+);
+
+export const Dots = (props) => (
+  <Svg
+    viewBox="0 0 20 20"
+    width={22}
+    height={22}
+    fill={COLORS.feedUserIcons}
+    className="x19dipnz x1lliihq x1k90msu x2h7rmj x1qfuztq"
+    style={{
+      "--color": "var(--secondary-icon)",
+    }}
+    {...props}
+  >
+    <G fillRule="evenodd" transform="translate(-446 -350)">
+      <Path d="M458 360a2 2 0 1 1-4 0 2 2 0 0 1 4 0m6 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0m-12 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0" />
+    </G>
+  </Svg>
+);
+
+export const StoryPresentCircle = ({ color, width, height }) => (
+  <Svg width={width} height={height} viewBox="0 0 100 100">
+    <Circle
+      r={45}
+      cx={50}
+      cy={50}
+      fill="transparent"
+      stroke={color}
+      strokeWidth="5.5px"
+    />
+  </Svg>
+);
 
 export const PhotoVideoIcon = (props) => (
   <Svg
@@ -51,7 +151,7 @@ export const VideoIcon = (props) => (
     viewBox="0 0 24 24"
     width={24}
     height={24}
-    fill="currentColor"
+    fill={COLORS.feedUserIcons}
     className="x19dipnz x1lliihq x1k90msu x2h7rmj x1qfuztq"
     style={{
       "--color": "var(--secondary-icon)",

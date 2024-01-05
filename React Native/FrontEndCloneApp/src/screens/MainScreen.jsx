@@ -14,6 +14,8 @@ import { FontAwesome5 } from "@expo/vector-icons";
 import { COLORS } from "../utils/colors";
 import { PhotoVideoIcon } from "../components/icons";
 import Stories from "../components/Stories";
+import Post from "../components/Post";
+import BottomNavBar from "../components/BottomNavBar";
 
 export default MainScreen = () => {
   return (
@@ -60,8 +62,12 @@ export default MainScreen = () => {
           </View>
           <View style={styles.separator} />
           <Stories />
+          <View style={styles.separator} />
+          <Post />
         </SafeAreaView>
       </ImageBackground>
+
+      <BottomNavBar />
     </View>
   );
 };
@@ -114,6 +120,5 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.separator,
     height: 7.5,
     width: "100%",
-    marginBottom: 12.5,
   },
 });

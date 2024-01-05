@@ -1,12 +1,23 @@
-import { Text, View, StyleSheet, Image } from "react-native";
+import { Text, View, StyleSheet, Image, TouchableOpacity } from "react-native";
 import { COLORS } from "../utils/colors";
+import StoryProfilePic from "./StoryProfilePic";
 
-export default Story = ({ image }) => {
+export default Story = ({ image, name, isYou, profilePic }) => {
   return (
-    <View style={styles.main}>
-      <Image source={image} style={styles.image} />
-      <Text style={styles.text}>{`Brad Pitt`}</Text>
-    </View>
+    <TouchableOpacity>
+      <View style={styles.main}>
+        <Image source={image} style={styles.image} />
+        <View style={styles.content}>
+          {isYou ? <View /> : <StoryProfilePic profilePic={profilePic} />}
+          <View>
+            {isYou ? <Text style={styles.nameYou}>Create</Text> : null}
+            <Text style={isYou ? styles.textYou : styles.textUsers}>
+              {name}
+            </Text>
+          </View>
+        </View>
+      </View>
+    </TouchableOpacity>
   );
 };
 
@@ -21,12 +32,38 @@ const styles = StyleSheet.create({
     flex: 1,
     height: "100%",
     width: "100%",
+    borderColor: COLORS.storyBorder,
+    borderWidth: 1,
     borderRadius: 15,
   },
-  text: {
+  content: {
     position: "absolute",
-    alignSelf: "flex-end",
-    color: COLORS.background,
-    fontWeight: "700",
+    flex: 1,
+    height: "100%",
+    width: "100%",
+    justifyContent: "space-between",
+  },
+  user: {
+    width: 40,
+    height: 40,
+    borderRadius: 50,
+    backgroundColor: "red",
+  },
+  textUsers: {
+    color: "white",
+    fontWeight: "600",
+    marginLeft: 6.7,
+    marginBottom: 7,
+  },
+  textYou: {
+    color: "black",
+    fontWeight: "600",
+    marginBottom: 7,
+    alignSelf: "center",
+  },
+  nameYou: {
+    color: "black",
+    fontWeight: "600",
+    alignSelf: "center",
   },
 });
