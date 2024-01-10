@@ -32,7 +32,7 @@ export default RegisterScreen = () => {
 
   return (
     <View style={styles.main}>
-      <Text>Register!</Text>
+      <Text style={styles.title}>Register here!</Text>
       <TextInput
         placeholder="Username"
         autoCapitalize="none"
@@ -87,7 +87,7 @@ export default RegisterScreen = () => {
           }
         }}
       >
-        <Text>Register</Text>
+        <Text style={styles.buttonText}>Confirm!</Text>
       </TouchableOpacity>
     </View>
   );
@@ -98,12 +98,54 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: "#58B37A",
   },
-  inputField: {},
+  title: {
+    color: "white",
+    fontSize: 27,
+    letterSpacing: 1.2,
+    marginVertical: 20,
+    fontWeight: "200",
+  },
+  inputField: {
+    width: "70%",
+    height: 50,
+    backgroundColor: "white",
+    borderRadius: 7,
+    marginBottom: 10,
+    fontSize: 18,
+    letterSpacing: 1.2,
+    padding: 10,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.22,
+    shadowRadius: 2.22,
+
+    elevation: 3,
+  },
   registerButton: {
     width: "70%",
-    height: 40,
+    height: 50,
     alignItems: "center",
     justifyContent: "center",
+    backgroundColor: "white",
+    borderRadius: 7,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.22,
+    shadowRadius: 2.22,
+    elevation: 3,
+  },
+  buttonText: {
+    color: "#58B37A",
+    fontSize: 22,
+    letterSpacing: 1.2,
+    fontWeight: "400",
   },
 });

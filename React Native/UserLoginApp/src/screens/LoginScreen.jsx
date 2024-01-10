@@ -8,7 +8,12 @@ import {
   Alert,
 } from "react-native";
 import { useAtom } from "jotai";
-import { emailAtom, passwordAtom, userLoggedInAtom } from "../utils/atoms";
+import {
+  emailAtom,
+  passwordAtom,
+  userLoggedInAtom,
+  userDataAtom,
+} from "../utils/atoms";
 import axios from "axios";
 import { useNavigation } from "@react-navigation/native";
 
@@ -16,6 +21,7 @@ export default LoginScreen = () => {
   const [email, setEmail] = useAtom(emailAtom);
   const [password, setPassword] = useAtom(passwordAtom);
   const [isUserLoggedin, setIsUserLoggedIn] = useAtom(userLoggedInAtom);
+  const [userData, setUserData] = useAtom(userDataAtom);
 
   const navigation = useNavigation();
 
@@ -27,6 +33,7 @@ export default LoginScreen = () => {
       for (const user of users) {
         if (user.email === email && user.password === password) {
           setIsUserLoggedIn(true);
+          setUserData(user);
           return;
         }
       }
@@ -73,7 +80,7 @@ export default LoginScreen = () => {
         <Text style={styles.logInButtonText}>SIGN IN</Text>
       </TouchableOpacity>
       <View style={styles.registerPrompt}>
-        <Text style={styles.registerPromtText}>DON'T HAVE AN ACCOUNT? </Text>
+        <Text style={styles.registerPromtText}>DON'T HAVE AN ACCOUNT?</Text>
         <TouchableOpacity onPress={() => navigation.navigate("Register")}>
           <Text style={styles.registerPromtText}>REGISTER!</Text>
         </TouchableOpacity>
@@ -104,13 +111,14 @@ const styles = StyleSheet.create({
     fontWeight: "200",
   },
   registerPrompt: {
-    flexDirection: "row",
+    alignItems: "center",
   },
   registerPromtText: {
     color: "white",
     fontSize: 18,
     letterSpacing: 1.2,
     fontWeight: "300",
+    marginTop: 5,
   },
   inputField: {
     width: "70%",
