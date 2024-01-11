@@ -11,9 +11,8 @@ export default DashboardScreen = () => {
   const handleDeleteAccount = async () => {
     console.log(userData.user_id);
     try {
-      await axios
-        .delete(`http://localhost:4000/:${userData.user_id}`)
-        .then(() => setIsUserLoggedIn(false));
+      await axios.delete(`http://localhost:4000/${userData.user_id}`);
+      setIsUserLoggedIn(false);
       Alert.alert("Account deleted!", "Thank you for the time spent with us.", [
         { text: "Cancel" },
       ]);

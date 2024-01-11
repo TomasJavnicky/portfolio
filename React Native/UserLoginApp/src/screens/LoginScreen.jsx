@@ -16,6 +16,7 @@ import {
 } from "../utils/atoms";
 import axios from "axios";
 import { useNavigation } from "@react-navigation/native";
+import { useEffect } from "react";
 
 export default LoginScreen = () => {
   const [email, setEmail] = useAtom(emailAtom);
@@ -24,6 +25,11 @@ export default LoginScreen = () => {
   const [userData, setUserData] = useAtom(userDataAtom);
 
   const navigation = useNavigation();
+
+  useEffect(() => {
+    setEmail("");
+    setPassword("");
+  }, [isUserLoggedin]);
 
   const handleLogin = async (email, password) => {
     try {
