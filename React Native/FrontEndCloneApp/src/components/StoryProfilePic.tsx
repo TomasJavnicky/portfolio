@@ -1,13 +1,26 @@
-import { StyleSheet, Image, TouchableOpacity, View } from "react-native";
+import React from "react";
+import {
+  StyleSheet,
+  Image,
+  TouchableOpacity,
+  View,
+  ImageSourcePropType,
+} from "react-native";
 import { StoryPresentCircle } from "./icons";
 import { COLORS } from "../utils/colors";
 
-export default StoryProfilePic = ({ profilePic }) => {
+interface Props {
+  profilePic?: ImageSourcePropType;
+}
+
+const StoryProfilePic: React.FC<Props> = ({ profilePic }) => {
   return (
     <TouchableOpacity style={styles.main}>
       <View style={styles.storyPresentCircle}>
         <StoryPresentCircle color={COLORS.fbBlue} width={44} height={44} />
-        <Image source={profilePic} style={styles.profilePic} />
+        {profilePic ? (
+          <Image source={profilePic} style={styles.profilePic} />
+        ) : null}
       </View>
     </TouchableOpacity>
   );
@@ -31,3 +44,5 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
 });
+
+export default StoryProfilePic;

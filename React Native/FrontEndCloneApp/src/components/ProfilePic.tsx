@@ -1,6 +1,7 @@
+import React from "react";
 import { StyleSheet, Image, TouchableOpacity } from "react-native";
 
-export default ProfilePic = () => {
+const ProfilePic: React.FC = () => {
   return (
     <TouchableOpacity>
       <Image
@@ -18,3 +19,5 @@ const styles = StyleSheet.create({
     borderRadius: 50,
   },
 });
+
+export default ProfilePic;

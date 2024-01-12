@@ -1,8 +1,9 @@
+import React from "react";
 import { Text, View, StyleSheet } from "react-native";
 import UserHeader from "./UserHeader";
 import PhotoGallery from "./PhotoGallery";
 
-export default Post = () => {
+const Post: React.FC = () => {
   return (
     <View style={styles.main}>
       <UserHeader />
@@ -22,3 +23,5 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
 });
+
+export default Post;

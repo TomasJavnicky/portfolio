@@ -1,3 +1,4 @@
+import React from "react";
 import { Text, View, StyleSheet, TouchableOpacity } from "react-native";
 import StoryProfilePic from "./StoryProfilePic";
 import { Dots } from "./icons";
@@ -5,7 +6,7 @@ import { AntDesign } from "@expo/vector-icons";
 import { COLORS } from "../utils/colors";
 import { PublicPost } from "./icons";
 
-export default UserHeader = () => {
+const UserHeader: React.FC = () => {
   return (
     <View style={styles.main}>
       <View style={styles.userInfo}>
@@ -22,7 +23,7 @@ export default UserHeader = () => {
         <TouchableOpacity style={styles.dots}>
           <Dots />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.close}>
+        <TouchableOpacity>
           <AntDesign name="close" size={24} color={COLORS.feedUserIcons} />
         </TouchableOpacity>
       </View>
@@ -65,3 +66,5 @@ const styles = StyleSheet.create({
     marginTop: 4,
   },
 });
+
+export default UserHeader;

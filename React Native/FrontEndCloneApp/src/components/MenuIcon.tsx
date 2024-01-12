@@ -1,9 +1,10 @@
+import React from "react";
 import { Text, View, TouchableOpacity, Image, StyleSheet } from "react-native";
 import { COLORS } from "../utils/colors";
 import { StoryPresentCircle } from "./icons";
 import { SimpleLineIcons } from "@expo/vector-icons";
 
-export default MenuIcon = () => {
+const MenuIcon: React.FC = () => {
   const profilePic = require("../img/profile_pic.jpeg");
   return (
     <View style={styles.main}>
@@ -57,3 +58,5 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
 });
+
+export default MenuIcon;

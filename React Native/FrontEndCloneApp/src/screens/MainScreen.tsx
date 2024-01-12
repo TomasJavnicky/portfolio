@@ -1,3 +1,4 @@
+import React from "react";
 import {
   StyleSheet,
   Text,
@@ -17,56 +18,45 @@ import Stories from "../components/Stories";
 import Post from "../components/Post";
 import BottomNavBar from "../components/BottomNavBar";
 
-export default MainScreen = () => {
+const MainScreen: React.FC = () => {
   return (
     <View style={styles.container}>
-      <ImageBackground
-        //source={require("../img/background.png")}
-        resizeMode="cover"
-        style={styles.image}
-      >
-        <SafeAreaView style={styles.main}>
-          <View style={styles.topBar}>
-            <Image
-              source={require("../img/facebook_logo.png")}
-              style={styles.logo}
+      <SafeAreaView style={styles.main}>
+        <View style={styles.topBar}>
+          <Image
+            source={require("../img/facebook_logo.png")}
+            style={styles.logo}
+          />
+          <View style={styles.topIcons}>
+            <TopButton icon={<Entypo name="plus" size={27} color="black" />} />
+            <TopButton
+              icon={<Entypo name="magnifying-glass" size={27} color="black" />}
             />
-            <View style={styles.topIcons}>
-              <TopButton
-                icon={<Entypo name="plus" size={27} color="black" />}
-              />
-              <TopButton
-                icon={
-                  <Entypo name="magnifying-glass" size={27} color="black" />
-                }
-              />
-              <TopButton
-                icon={
-                  <FontAwesome5
-                    name="facebook-messenger"
-                    size={22}
-                    color="black"
-                  />
-                }
-              />
-            </View>
+            <TopButton
+              icon={
+                <FontAwesome5
+                  name="facebook-messenger"
+                  size={22}
+                  color="black"
+                />
+              }
+            />
           </View>
-          <View style={styles.secondRow}>
-            <View style={styles.statusInput}>
-              <ProfilePic />
-              <Text style={styles.fakeTextInput}>What's on your mind?</Text>
-            </View>
-            <TouchableOpacity>
-              <PhotoVideoIcon style={styles.photoVideoIcon} />
-            </TouchableOpacity>
+        </View>
+        <View style={styles.secondRow}>
+          <View style={styles.statusInput}>
+            <ProfilePic />
+            <Text style={styles.fakeTextInput}>What's on your mind?</Text>
           </View>
-          <View style={styles.separator} />
-          <Stories />
-          <View style={styles.separator} />
-          <Post />
-        </SafeAreaView>
-      </ImageBackground>
-
+          <TouchableOpacity>
+            <PhotoVideoIcon style={styles.photoVideoIcon} />
+          </TouchableOpacity>
+        </View>
+        <View style={styles.separator} />
+        <Stories />
+        <View style={styles.separator} />
+        <Post />
+      </SafeAreaView>
       <BottomNavBar />
     </View>
   );
@@ -84,7 +74,7 @@ const styles = StyleSheet.create({
     marginLeft: 12,
     marginTop: 7,
   },
-  image: {
+  main: {
     flex: 1,
   },
   topBar: {
@@ -122,3 +112,5 @@ const styles = StyleSheet.create({
     width: "100%",
   },
 });
+
+export default MainScreen;

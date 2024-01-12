@@ -1,7 +1,8 @@
+import React from "react";
 import { View, StyleSheet } from "react-native";
 import Story from "./Story";
 
-export default Stories = () => {
+const Stories: React.FC = () => {
   return (
     <View style={styles.main}>
       <Story image={require("../img/story0.png")} name={`story`} isYou={true} />
@@ -31,3 +32,5 @@ const styles = StyleSheet.create({
     marginTop: 12.5,
   },
 });
+
+export default Stories;

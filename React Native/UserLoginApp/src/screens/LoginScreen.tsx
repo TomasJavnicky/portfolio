@@ -1,3 +1,4 @@
+import React from "react";
 import {
   StyleSheet,
   Text,
@@ -15,23 +16,24 @@ import {
   userDataAtom,
 } from "../utils/atoms";
 import axios from "axios";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, ParamListBase } from "@react-navigation/native";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { useEffect } from "react";
 
-export default LoginScreen = () => {
+const LoginScreen: React.FC = () => {
   const [email, setEmail] = useAtom(emailAtom);
   const [password, setPassword] = useAtom(passwordAtom);
   const [isUserLoggedin, setIsUserLoggedIn] = useAtom(userLoggedInAtom);
   const [userData, setUserData] = useAtom(userDataAtom);
 
-  const navigation = useNavigation();
+  const navigation = useNavigation<NativeStackNavigationProp<ParamListBase>>();
 
   useEffect(() => {
     setEmail("");
     setPassword("");
   }, [isUserLoggedin]);
 
-  const handleLogin = async (email, password) => {
+  const handleLogin = async (email: string, password: string) => {
     try {
       const response = await axios.get(`http://localhost:4000/`);
       const users = response.data;
@@ -172,3 +174,5 @@ const styles = StyleSheet.create({
     fontWeight: "300",
   },
 });
+
+export default LoginScreen;

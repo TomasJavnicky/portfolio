@@ -1,8 +1,23 @@
-import { Text, View, StyleSheet, Image, TouchableOpacity } from "react-native";
+import React from "react";
+import {
+  Text,
+  View,
+  StyleSheet,
+  Image,
+  TouchableOpacity,
+  ImageSourcePropType,
+} from "react-native";
 import { COLORS } from "../utils/colors";
 import StoryProfilePic from "./StoryProfilePic";
 
-export default Story = ({ image, name, isYou, profilePic }) => {
+interface Props {
+  image: ImageSourcePropType;
+  name: string;
+  isYou?: boolean;
+  profilePic?: ImageSourcePropType;
+}
+
+const Story: React.FC<Props> = ({ image, name, isYou, profilePic }) => {
   return (
     <TouchableOpacity>
       <View style={styles.main}>
@@ -67,3 +82,5 @@ const styles = StyleSheet.create({
     alignSelf: "center",
   },
 });
+
+export default Story;

@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Text,
   View,
@@ -9,7 +10,13 @@ import { COLORS } from "../utils/colors";
 
 const screenWidth = Dimensions.get("window").width;
 
-export default BottomNavBarButton = ({ icon, text, isPressed }) => {
+interface Props {
+  icon: string;
+  text: string;
+  isPressed: boolean;
+}
+
+const BottomNavBarButton: React.FC<Props> = ({ icon, text, isPressed }) => {
   return (
     <TouchableOpacity>
       <View style={styles.main}>
@@ -53,3 +60,5 @@ const styles = StyleSheet.create({
     letterSpacing: 0.2,
   },
 });
+
+export default BottomNavBarButton;

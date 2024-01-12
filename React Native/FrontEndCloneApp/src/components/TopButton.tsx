@@ -1,7 +1,12 @@
-import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
+import React, { ReactNode } from "react";
+import { View, StyleSheet, TouchableOpacity } from "react-native";
 import { COLORS } from "../utils/colors";
 
-export default TopButton = ({ icon }) => {
+interface Props {
+  icon: ReactNode;
+}
+
+const TopButton: React.FC<Props> = ({ icon }) => {
   return (
     <TouchableOpacity>
       <View style={styles.main}>{icon}</View>
@@ -20,3 +25,5 @@ const styles = StyleSheet.create({
     marginTop: 13,
   },
 });
+
+export default TopButton;

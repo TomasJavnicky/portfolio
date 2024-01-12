@@ -1,8 +1,14 @@
+import React from "react";
 import { Text, View, StyleSheet, TouchableOpacity } from "react-native";
 import { COLORS } from "../utils/colors";
 import { Feather } from "@expo/vector-icons";
 
-export default Todo = ({ title, onDelete }) => {
+interface Props {
+  title: string;
+  onDelete: (title: string) => void;
+}
+
+const Todo: React.FC<Props> = ({ title, onDelete }) => {
   return (
     <View style={styles.main}>
       <Text style={styles.text}>{title}</Text>
@@ -39,3 +45,5 @@ const styles = StyleSheet.create({
     paddingRight: 20,
   },
 });
+
+export default Todo;

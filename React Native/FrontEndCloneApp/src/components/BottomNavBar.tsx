@@ -1,6 +1,7 @@
+import React from "react";
 import { Text, View, StyleSheet } from "react-native";
 import { COLORS } from "../utils/colors";
-import BottomNavBarButton from "../components/BottomNavBarButton";
+import BottomNavBarButton from "./BottomNavBarButton";
 import {
   HomeIcon,
   VideoIcon,
@@ -10,7 +11,7 @@ import {
 } from "./icons";
 import MenuIcon from "./MenuIcon";
 
-export default BottomNavBar = () => {
+const BottomNavBar: React.FC = () => {
   return (
     <View style={styles.main}>
       <BottomNavBarButton icon={<HomeIcon />} text={"Home"} isPressed={true} />
@@ -48,3 +49,5 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
 });
+
+export default BottomNavBar;

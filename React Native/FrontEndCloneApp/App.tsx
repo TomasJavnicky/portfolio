@@ -1,6 +1,8 @@
-import { SafeAreaView } from "react-native";
+import React from "react";
 import MainScreen from "./src/screens/MainScreen";
 
-export default App = () => {
+const App: React.FC = () => {
   return <MainScreen />;
 };
+
+export default App;

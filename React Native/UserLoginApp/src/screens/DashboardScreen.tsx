@@ -1,10 +1,11 @@
+import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View, Alert } from "react-native";
 import { userDataAtom, userLoggedInAtom } from "../utils/atoms";
 import { useAtomValue, useAtom } from "jotai";
 import { SafeAreaView } from "react-native-safe-area-context";
 import axios from "axios";
 
-export default DashboardScreen = () => {
+const DashboardScreen: React.FC = () => {
   const userData = useAtomValue(userDataAtom);
   const [isUserLoggedin, setIsUserLoggedIn] = useAtom(userLoggedInAtom);
 
@@ -74,3 +75,5 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
 });
+
+export default DashboardScreen;

@@ -3,9 +3,12 @@ import Todo from "./Todo";
 import { todoListAtom } from "../utils/atoms";
 import { useAtom } from "jotai";
 
-export default TodosList = () => {
+interface Props {}
+
+const TodosList: React.FC<Props> = () => {
   const [todoList, setTodoList] = useAtom(todoListAtom);
-  const handleDeleteTodo = (todoTitle) => {
+
+  const handleDeleteTodo = (todoTitle: string) => {
     const updatedTodoList = todoList.filter((title) => title !== todoTitle);
     setTodoList(updatedTodoList);
   };
@@ -28,3 +31,5 @@ const styles = StyleSheet.create({
     paddingTop: 10,
   },
 });
+
+export default TodosList;

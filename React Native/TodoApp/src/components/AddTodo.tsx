@@ -1,3 +1,4 @@
+import React from "react";
 import {
   View,
   TextInput,
@@ -11,7 +12,9 @@ import { useAtom } from "jotai";
 import { todoListAtom, newTodoAtom } from "../utils/atoms";
 import { COLORS } from "../utils/colors";
 
-export default AddTodo = () => {
+interface Props {}
+
+const AddTodo: React.FC<Props> = () => {
   const [todoList, setTodoList] = useAtom(todoListAtom);
   const [newTodo, setNewTodo] = useAtom(newTodoAtom);
 
@@ -73,7 +76,9 @@ const styles = StyleSheet.create({
   },
   thingsToDo: {
     fontSize: 26,
-    fontWeight: 800,
+    fontWeight: "300",
     marginBottom: 30,
   },
 });
+
+export default AddTodo;

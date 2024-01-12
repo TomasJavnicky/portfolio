@@ -1,8 +1,9 @@
+import React from "react";
 import { Image, View, StyleSheet, Dimensions } from "react-native";
 
 const screenWidth = Dimensions.get("window").width;
 
-export default PhotoGallery = () => {
+const PhotoGallery: React.FC = () => {
   return (
     <View>
       <View style={styles.firstRow}>
@@ -55,3 +56,5 @@ const styles = StyleSheet.create({
     height: screenWidth * 0.333 - 2.5,
   },
 });
+
+export default PhotoGallery;

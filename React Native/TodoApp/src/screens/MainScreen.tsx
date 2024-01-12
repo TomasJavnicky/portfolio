@@ -1,3 +1,4 @@
+import React from "react";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, SafeAreaView } from "react-native";
 import AddTodo from "../components/AddTodo";
@@ -6,7 +7,9 @@ import { useAtom } from "jotai";
 import { COLORS } from "../utils/colors";
 import TodosList from "../components/TodosList";
 
-export default MainScreen = () => {
+interface Props {}
+
+const MainScreen: React.FC<Props> = () => {
   const [todoList] = useAtom(todoListAtom);
   return (
     <View style={styles.main}>
@@ -49,3 +52,5 @@ const styles = StyleSheet.create({
     fontSize: 18,
   },
 });
+
+export default MainScreen;

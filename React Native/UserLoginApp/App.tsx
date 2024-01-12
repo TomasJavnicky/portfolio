@@ -1,3 +1,4 @@
+import React from "react";
 import LoginScreen from "./src/screens/LoginScreen";
 import DashboardScreen from "./src/screens/DashboardScreen";
 import RegisterScreen from "./src/screens/RegisterScreen";
@@ -37,12 +38,13 @@ const LoggedInStack = () => {
     </Stack.Navigator>
   );
 };
-
-export default function App() {
+const App: React.FC = () => {
   const isUserLoggedIn = useAtomValue(userLoggedInAtom);
   return (
     <NavigationContainer>
       {isUserLoggedIn ? <LoggedInStack /> : <LoggedOutStack />}
     </NavigationContainer>
   );
-}
+};
+
+export default App;
