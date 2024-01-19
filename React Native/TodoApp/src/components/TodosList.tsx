@@ -1,24 +1,18 @@
 import { View, FlatList, StyleSheet } from "react-native";
 import Todo from "./Todo";
-import { todoListAtom } from "../utils/atoms";
-import { useAtom } from "jotai";
+import { todoListAtomsAtom } from "../utils/atoms";
+import { useAtomValue } from "jotai";
 
 interface Props {}
 
 const TodosList: React.FC<Props> = () => {
-  const [todoList, setTodoList] = useAtom(todoListAtom);
+  const todoListAtoms = useAtomValue(todoListAtomsAtom);
 
-  const handleDeleteTodo = (todoTitle: string) => {
-    const updatedTodoList = todoList.filter((title) => title !== todoTitle);
-    setTodoList(updatedTodoList);
-  };
   return (
     <View style={styles.main}>
       <FlatList
-        data={todoList}
-        renderItem={({ item, index }) => (
-          <Todo title={item} onDelete={handleDeleteTodo} />
-        )}
+        data={todoListAtoms}
+        renderItem={({ item, index }) => <Todo titleAtom={item} />}
         keyExtractor={(item, index) => index.toString()}
       />
     </View>

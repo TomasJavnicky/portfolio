@@ -2,17 +2,24 @@ import React from "react";
 import { Text, View, StyleSheet, TouchableOpacity } from "react-native";
 import { COLORS } from "../utils/colors";
 import { Feather } from "@expo/vector-icons";
+import { Atom, PrimitiveAtom, useAtomValue, useSetAtom } from "jotai";
+import { handleDeleteTodoAtom } from "../utils/atoms";
 
 interface Props {
-  title: string;
-  onDelete: (title: string) => void;
+  titleAtom: Atom<string>;
 }
 
-const Todo: React.FC<Props> = ({ title, onDelete }) => {
+const Todo: React.FC<Props> = ({ titleAtom }) => {
+  const title = useAtomValue(titleAtom);
+  const handleDeleteTodo = useSetAtom(handleDeleteTodoAtom);
   return (
     <View style={styles.main}>
       <Text style={styles.text}>{title}</Text>
-      <TouchableOpacity onPress={() => onDelete(title)}>
+      <TouchableOpacity
+        onPress={() => {
+          handleDeleteTodo(titleAtom);
+        }}
+      >
         <Feather
           name="trash-2"
           size={22}
