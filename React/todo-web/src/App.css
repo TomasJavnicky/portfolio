@@ -1,0 +1,15 @@
+.main {
+  background: linear-gradient(to right, #a234b3, #35e1ff);
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.add-todo {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-top: 40vh;
+}

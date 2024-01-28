@@ -1,0 +1,8 @@
+.todo-list {
+  font-size: 35px;
+}
+
+.todo-list li:hover {
+  text-decoration: line-through;
+  cursor: pointer;
+}
