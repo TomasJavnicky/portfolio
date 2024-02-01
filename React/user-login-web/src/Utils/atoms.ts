@@ -27,3 +27,4 @@ export const createAccountButtonEnabledAtom = atom((get) => {
     !!get(newUsernameAtom) && !!get(newEmailAtom) && !!get(newPasswordAtom)
   );
 });
+export const userCreatedMessageAtom = atom<boolean>(false);

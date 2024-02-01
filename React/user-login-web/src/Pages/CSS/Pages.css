@@ -3,12 +3,18 @@
   flex: 1;
   align-items: center;
   flex-direction: column;
-  justify-content: center;
 }
 
 h1 {
   color: white;
   font-size: 80px;
+  letter-spacing: 1.2;
+  font-weight: 100;
+}
+
+h2 {
+  color: white;
+  font-size: 50px;
   letter-spacing: 1.2;
   font-weight: 100;
 }
@@ -29,4 +35,9 @@ p {
 
 a {
   color: white;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
 }
